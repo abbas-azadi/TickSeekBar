@@ -4,12 +4,28 @@ buildscript {
     
     repositories {
         google()
-        jcenter()
+        gradlePluginPortal()
+        mavenCentral()
+        mavenLocal()
+        maven { url 'http://repo1.maven.org/maven2' }
+        maven { url 'https://jitpack.io' }
+        maven { url "https://maven.google.com" }
+        maven {
+            url 'https://dl.bintray.com/amulyakhare/maven'
+        }
+        maven{
+            url  'https://oss.sonatype.org/content/repositories/snapshots/'
+            name 'OSS-Sonatype'
+        }
+        maven {
+            url 'https://dl.bintray.com/bigmercu/maven/'
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -20,7 +36,22 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        gradlePluginPortal()
+        mavenCentral()
+        mavenLocal()
+        maven { url 'http://repo1.maven.org/maven2' }
+        maven { url 'https://jitpack.io' }
+        maven { url "https://maven.google.com" }
+        maven {
+            url 'https://dl.bintray.com/amulyakhare/maven'
+        }
+        maven{
+            url  'https://oss.sonatype.org/content/repositories/snapshots/'
+            name 'OSS-Sonatype'
+        }
+        maven {
+            url 'https://dl.bintray.com/bigmercu/maven/'
+        }
     }
 }
 

@@ -187,7 +187,8 @@ public class TickSeekBar extends View {
     }
 
     private void initParams() {
-        if (mTicksCount < 0 || mTicksCount > 50) {
+//        if (mTicksCount < 0 || mTicksCount > 50) {
+        if (mTicksCount < 0 || mTicksCount > 100) {
             throw new IllegalArgumentException("the Argument: TICK COUNT must be limited between 0-50, " +
                     "Now is " + mTicksCount);
         }
@@ -199,13 +200,15 @@ public class TickSeekBar extends View {
             mThumbRadius = mThumbSize / 2.0f;
             mThumbTouchRadius = mThumbRadius * 1.2f;
         } else {
-            mThumbRadius = Math.min(SizeUtils.dp2px(mContext, THUMB_MAX_WIDTH), mThumbSize) / 2.0f;
+//            mThumbRadius = Math.min(SizeUtils.dp2px(mContext, THUMB_MAX_WIDTH), mThumbSize) / 2.0f;
+            mThumbRadius = Math.min(SizeUtils.dp2px(mContext, THUMB_MAX_WIDTH), mThumbSize) / 3.0f;
             mThumbTouchRadius = mThumbRadius;
         }
         if (mTickMarksDrawable == null) {
             mTickRadius = mTickMarksSize / 2.0f;
         } else {
-            mTickRadius = Math.min(SizeUtils.dp2px(mContext, THUMB_MAX_WIDTH), mTickMarksSize) / 2.0f;
+//            mTickRadius = Math.min(SizeUtils.dp2px(mContext, THUMB_MAX_WIDTH), mTickMarksSize) / 2.0f;
+            mTickRadius = Math.min(SizeUtils.dp2px(mContext, THUMB_MAX_WIDTH), mTickMarksSize);
         }
         mCustomDrawableMaxHeight = Math.max(mThumbTouchRadius, mTickRadius) * 2.0f;
         initStrokePaint();
@@ -221,7 +224,8 @@ public class TickSeekBar extends View {
     }
 
     private void collectTicksInfo() {
-        if (mTicksCount < 0 || mTicksCount > 50) {
+//        if (mTicksCount < 0 || mTicksCount > 50) {
+        if (mTicksCount < 0 || mTicksCount > 100) {
             throw new IllegalArgumentException("the Argument: TICK COUNT must be limited between (0-50), Now is " + mTicksCount);
         }
         if (mTicksCount != 0) {
@@ -1764,7 +1768,8 @@ public class TickSeekBar extends View {
      * @param tickCount
      */
     public synchronized void setTickCount(int tickCount) {
-        if (mTicksCount < 0 || mTicksCount > 50) {
+//        if (mTicksCount < 0 || mTicksCount > 50) {
+        if (mTicksCount < 0 || mTicksCount > 100) {
             throw new IllegalArgumentException("the Argument: TICK COUNT must be limited between (0-50), Now is " + mTicksCount);
         }
         mTicksCount = tickCount;
